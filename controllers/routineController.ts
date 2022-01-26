@@ -10,8 +10,8 @@ class RoutineController extends IController {
 
     async create(req: Request, res: Response){
         try {
-            const {id, name, trainingType, days, complexity, date, client_id } = req.body;
-            const sql = `INSERT INTO routine (id, name, trainingType, days, complexity, date, client_id) VALUES ('${id}', '${name}', '${trainingType}', '${days}', '${complexity}', '${date}', '${client_id}') `;
+            const {name, trainingType, days, complexity, date, client_id } = req.body;
+            const sql = `INSERT INTO routine (name, trainingType, days, complexity, date, client_id) VALUES ('${name}', '${trainingType}', '${days}', '${complexity}', '${date}', '${client_id}') `;
             await pool.query(sql, (err: Error, result: any) => {
                 console.log(result)
                 // if(result) {
