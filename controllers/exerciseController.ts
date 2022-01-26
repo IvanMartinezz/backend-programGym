@@ -8,9 +8,9 @@ class ExerciseController extends IController {
 
     async create(req: Request, res: Response){
         try {
-            const {id, name, element, serie, repetition, kilogram, breakk, routine_id} = req.body;
-            const sql = `INSERT INTO exercise (id, name, element, serie, repetition, kilogram, break, routine_id) 
-                VALUES ('${id}', '${name}', '${element}', '${serie}', '${repetition}', '${kilogram}', '${breakk}', '${routine_id}') `;
+            const {name, element, serie, repetition, kilogram, breakk, routine_id} = req.body;
+            const sql = `INSERT INTO exercise (name, element, serie, repetition, kilogram, break, routine_id) 
+                VALUES ('${name}', '${element}', '${serie}', '${repetition}', '${kilogram}', '${breakk}', '${routine_id}') `;
             await pool.query(sql, (err: Error, result: any) => {
                 console.log(result)
                  if(typeof result === "undefined") {
