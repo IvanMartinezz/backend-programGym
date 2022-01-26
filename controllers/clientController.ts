@@ -121,8 +121,6 @@ class ClientController extends IController {
         }
     }
 
-    // select * from client where sex = 'masculino'
-
     async searchBySex(req: Request, res: Response){
         try {
             const sex: string = req.params.sex;
