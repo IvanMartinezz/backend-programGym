@@ -7,9 +7,9 @@ class MeasureController extends IController {
     async create(req: Request, res: Response){
         try {
 
-            const {id, date, age, height, weight, shoulders, chest, waist, biceps, leg, client_id} = req.body;
-            const sql = `INSERT INTO measure (id, date, age, height, weight, shoulders, chest, waist, biceps, leg, client_id)
-                 VALUES ('${id}', '${date}', '${age}', '${height}', '${weight}', '${shoulders}', '${chest}', '${waist}', '${biceps}', '${leg}', '${client_id}')` ;
+            const {idate, age, height, weight, shoulders, chest, waist, biceps, leg, client_id} = req.body;
+            const sql = `INSERT INTO measure (date, age, height, weight, shoulders, chest, waist, biceps, leg, client_id)
+                 VALUES (''${date}', '${age}', '${height}', '${weight}', '${shoulders}', '${chest}', '${waist}', '${biceps}', '${leg}', '${client_id}')` ;
             await pool.query(sql, (err: Error, result: any) => {
                 console.log(result);
                 if(typeof result === "undefined") {
