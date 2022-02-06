@@ -19,10 +19,3 @@ export const checkJwt = (req: Request, res: Response, next: NextFunction) => {
     res.setHeader('token', newToken);
     next();
 };
-
-
-                    // const {id, username} = result[0];
-                    // const user_id = id;
-                    // const token = jwt.sign({user_id, username}, config.jwtSecret, {expiresIn: '20h'})
-                    //  console.log(token, user_id)
-                    // res.status(200).json({message:'OK', token, user_id});
